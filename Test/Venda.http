@@ -1,0 +1,27 @@
+### Cadastrar venda
+POST https://localhost:5001/api/venda/create
+Content-Type: application/json
+
+{
+  "vendaId": 1,
+  "totalVenda": 50,
+  "quantidadeVenda": 5,
+  "precoUnitario": 10,
+  "documento": 5,
+  "produto": {
+    "produtoId": 1,
+    "nome": "produto 1",
+    "quantidade": 100,
+    "preco": 10,
+    "ativo": true,
+    "categoria": {
+      "categoriaId": 1,
+      "nome": "bebida"
+    }
+  }
+}
+
+
+
+### Listar venda
+GET https://localhost:5001/api/venda/getbyid/1

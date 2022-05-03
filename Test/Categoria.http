@@ -1,0 +1,13 @@
+### Cadastrar categoria
+POST https://localhost:5001/api/categoria/create
+Content-Type: application/json
+
+{
+  "categoriaId": 1,
+  "nome": "bebida"
+}
+
+
+
+### Listar categoria
+GET https://localhost:5001/api/categoria/list

@@ -1,0 +1,37 @@
+### Cadastrar produto
+POST https://localhost:5001/api/produto/create
+Content-Type: application/json
+
+{   
+  "produtoId": 1,
+  "nome": "produto 1",
+  "quantidade": 1000,
+  "preco": 10,
+  "ativo": true,
+  "categoria": {
+    "categoriaId": 1,
+    "nome": "Bebida"
+    }
+}
+
+### Listar produtos
+GET https://localhost:5001/api/produto/list
+
+### Buscar produto pelo id
+GET https://localhost:5001/api/produto/getbyid/1
+
+### Alterar produto
+PUT https://localhost:5001/api/produto/update
+Content-Type: application/json
+
+{
+  "produtoId": 1,
+  "nome": "produto alterado",
+  "quantidade": 5,
+  "preco": 7,
+  "ativo": true,
+  "categoria": {
+    "categoriaId": 1,
+    "nome": "Bebida"
+}
+
