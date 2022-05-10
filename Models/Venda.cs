@@ -11,7 +11,10 @@ namespace API.Models
         public double PrecoUnitario { get; set; }
         public int Documento { get; set; }
         public DateTime DataVenda { get; set; }
+        public int ProdutoId { get; set; }
         public Produto Produto { get; set; }
+
+   
 
 
 

@@ -8,6 +8,7 @@ Content-Type: application/json
   "quantidadeVenda": 5,
   "precoUnitario": 10,
   "documento": 5,
+  "produtoId": 1,
   "produto": {
     "produtoId": 1,
     "nome": "produto 1",
@@ -16,8 +17,9 @@ Content-Type: application/json
     "ativo": true,
     "categoria": {
       "categoriaId": 1,
-      "nome": "bebida"
+      "nomecategoria": "bebida"
     }
+    
   }
 }
 

@@ -24,29 +24,15 @@ namespace EstoqueApi.Controllers
         [Route("create")]
         public async Task<ActionResult<Venda>> PostVenda(Venda venda)
         {
-            var produto = await _context.Produtos.AsNoTracking().Where(c => c.ProdutoId ==
-            venda.Produto.ProdutoId && c.Quantidade >= venda.QuantidadeVenda).FirstOrDefaultAsync();
+            var produtoId = venda.ProdutoId;
+            
+            venda.Produto = _context.Produtos.Find(produtoId);
+   
+            venda.Produto.Quantidade = venda.Produto.Quantidade - venda.QuantidadeVenda;
 
-            if (produto == null || produto.Ativo == false)
-            {
-                return BadRequest("Você não possui estoque suficiente");
-            }
-            produto.Quantidade = produto.Quantidade - venda.QuantidadeVenda;
-
-
-            _context.Entry(produto).State = EntityState.Modified;
-
-            await _context.SaveChangesAsync();
-
-            _context.Entry(produto).State = EntityState.Detached;
-
-                        
 
             _context.Vendas.Add(venda);
-            _context.Entry(venda.Produto).State = EntityState.Unchanged;
             await _context.SaveChangesAsync();
-    
-
             return CreatedAtAction("GetVenda", new { id = venda.VendaId }, venda);
         }
 

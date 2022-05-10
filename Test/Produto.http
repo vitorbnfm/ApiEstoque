@@ -10,7 +10,7 @@ Content-Type: application/json
   "ativo": true,
   "categoria": {
     "categoriaId": 1,
-    "nome": "Bebida"
+    "nomecategoria": "Bebida"
     }
 }
 
