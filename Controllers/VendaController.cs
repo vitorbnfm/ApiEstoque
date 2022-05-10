@@ -2,6 +2,7 @@
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,7 +30,8 @@ namespace EstoqueApi.Controllers
             venda.Produto = _context.Produtos.Find(produtoId);
    
             venda.Produto.Quantidade = venda.Produto.Quantidade - venda.QuantidadeVenda;
-
+            var random = new Random();
+            venda.Documento = random.Next(000000000,999999999);
 
             _context.Vendas.Add(venda);
             await _context.SaveChangesAsync();

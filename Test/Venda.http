@@ -7,7 +7,6 @@ Content-Type: application/json
   "totalVenda": 50,
   "quantidadeVenda": 5,
   "precoUnitario": 10,
-  "documento": 5,
   "produtoId": 1,
   "produto": {
     "produtoId": 1,
